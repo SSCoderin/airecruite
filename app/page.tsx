@@ -1,102 +1,194 @@
-import Image from "next/image";
+"use client";
+
+import {
+  Timer,
+  BarChart2,
+  Scale,
+  Pencil,
+  Share2,
+  ClipboardCheck,
+  PlayCircle,
+  PlusCircle,
+} from "lucide-react";
+import Link from "next/link";
+
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-gray-50 font-sans text-gray-800 antialiased">
+     
+      <section className="bg-gradient-to-r from-indigo-600 to-purple-700 text-white py-20 px-4 sm:py-24 md:py-32 rounded-b-3xl shadow-lg">
+        <div className="container mx-auto text-center">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6">
+            AI-Powered Interview Assistant for Modern Recruiters
+          </h1>
+          <p className="text-lg sm:text-xl md:text-2xl mb-10 max-w-3xl mx-auto">
+            Revolutionize Your Hiring: AIrecruit Finds Your Perfect Match. Let
+            our AI voice agent conduct candidate interviews while you focus on
+            finding the perfect match. Save time, reduce bias, and improve your
+            hiring process.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+            <Link
+              href="/dashboard"
+              className="bg-white text-indigo-700 hover:bg-indigo-100 font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1 flex items-center justify-center"
+            >
+              <PlusCircle className="mr-2" size={20} /> Create Interview
+            </Link>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      <section className="py-20 px-4">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            Streamline Your Hiring Process
+          </h2>
+          <p className="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
+            AIrecruit helps you save time and find better candidates with our
+            advanced AI interview technology.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-2 border border-gray-100">
+              <div className="flex justify-center mb-6">
+                <div className="bg-indigo-100 p-4 rounded-full inline-flex items-center justify-center">
+                  <Timer className="text-indigo-600" size={32} />
+                </div>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Save Time
+              </h3>
+              <p className="text-gray-600">
+                Automate initial screening interviews and focus on final
+                candidates.
+              </p>
+            </div>
+
+            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-2 border border-gray-100">
+              <div className="flex justify-center mb-6">
+                <div className="bg-purple-100 p-4 rounded-full inline-flex items-center justify-center">
+                  <BarChart2 className="text-purple-600" size={32} />
+                </div>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Data-Driven Insights
+              </h3>
+              <p className="text-gray-600">
+                Get detailed analytics and candidate comparisons based on
+                interview responses.
+              </p>
+            </div>
+
+            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-2 border border-gray-100">
+              <div className="flex justify-center mb-6">
+                <div className="bg-green-100 p-4 rounded-full inline-flex items-center justify-center">
+                  <Scale className="text-green-600" size={32} />
+                </div>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Reduce Bias
+              </h3>
+              <p className="text-gray-600">
+                Standardized interviews help eliminate unconscious bias in the
+                hiring process.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-gray-100 py-20 px-4 rounded-t-3xl shadow-inner">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            How AIrecruit Works
+          </h2>
+          <p className="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
+            Three simple steps to transform your recruitment process
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div className="flex flex-col items-center text-center p-6 bg-white rounded-xl shadow-md border border-gray-100">
+              <div className="relative mb-6">
+                <div className="bg-indigo-500 text-white w-12 h-12 flex items-center justify-center rounded-full text-2xl font-bold shadow-md">
+                  1
+                </div>
+                <div className="absolute -bottom-2 -right-2 bg-indigo-100 p-2 rounded-full">
+                  <Pencil className="text-indigo-600" size={20} />
+                </div>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Create Interview
+              </h3>
+              <p className="text-gray-600">
+                Set up your job requirements and customize interview questions.
+              </p>
+            </div>
+
+            <div className="flex flex-col items-center text-center p-6 bg-white rounded-xl shadow-md border border-gray-100">
+              <div className="relative mb-6">
+                <div className="bg-purple-500 text-white w-12 h-12 flex items-center justify-center rounded-full text-2xl font-bold shadow-md">
+                  2
+                </div>
+                <div className="absolute -bottom-2 -right-2 bg-purple-100 p-2 rounded-full">
+                  <Share2 className="text-purple-600" size={20} />
+                </div>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Share with Candidates
+              </h3>
+              <p className="text-gray-600">
+                Send interview links to candidates to complete at their
+                convenience.
+              </p>
+            </div>
+
+            <div className="flex flex-col items-center text-center p-6 bg-white rounded-xl shadow-md border border-gray-100">
+              <div className="relative mb-6">
+                <div className="bg-green-500 text-white w-12 h-12 flex items-center justify-center rounded-full text-2xl font-bold shadow-md">
+                  3
+                </div>
+                <div className="absolute -bottom-2 -right-2 bg-green-100 p-2 rounded-full">
+                  <ClipboardCheck className="text-green-600" size={20} />
+                </div>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Review Results
+              </h3>
+              <p className="text-gray-600">
+                Get AI-analyzed results, transcripts, and candidate comparisons.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-gradient-to-r from-purple-700 to-indigo-600 text-white py-20 px-4 rounded-b-3xl shadow-lg">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+            Ready to Transform Your Hiring Process?
+          </h2>
+          <p className="text-lg sm:text-xl mb-10 max-w-2xl mx-auto">
+            Join hundreds of companies already using AIrecruit to find the best
+            talent.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+            <Link
+              href="/dashboard"
+              className="bg-white text-purple-700 hover:bg-purple-100 font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1"
+            >
+              Get Started for Free
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <footer className="bg-gray-800 text-white py-8 px-4 text-center">
+        <div className="container mx-auto">
+          <p>
+            &copy; {new Date().getFullYear()} AIrecruit. All rights reserved.
+          </p>
+        </div>
       </footer>
     </div>
   );
