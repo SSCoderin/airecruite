@@ -3,9 +3,16 @@ import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import { Video, Settings } from "lucide-react";
 import axios from "axios";
-
+import { toast } from "sonner";
+import InterviewRecording from "../_components/InterviewRecording";
 export default function Interview() {
   const [interviewData, setInterviewData] = useState({});
+  const [join , setJoin] = useState(false);
+  const [studentData , setStudentData] = useState({
+    name : "",
+    email : "",
+    
+  });
   const { interview_id } = useParams();
   useEffect(() => {
     interview_id && getInterviewData();
@@ -23,11 +30,15 @@ export default function Interview() {
     }
   };
   const joinInterview = () => {
-  
-    window.location.href = `/interview/${interview_id}/start`;
+    if(studentData.name === "" || studentData.email === "" ) return toast.error("Enter your name and email");
+    setJoin(true);
   };
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen px-4 bg-white text-gray-800">
+    <> {join ? (<>
+    <InterviewRecording interviewData={interviewData} studentData = {studentData}/>
+    </>) : (
+      <div className="flex flex-col items-center justify-center min-h-screen px-4 bg-white text-gray-800">
       <h1 className="text-4xl text-blue-600 font-bold mb-2">AIrecruit</h1>
       <p className="text-lg text-gray-600 mb-6">
         AI-powered Interview Platform
@@ -55,7 +66,9 @@ export default function Interview() {
             </label>
             <input
               type="text"
+              value={studentData.name}
               placeholder="shivkiran santosh chitkulwar"
+              onChange={(e) => setStudentData({...studentData , name : e.target.value})}
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
           </div>
@@ -65,7 +78,9 @@ export default function Interview() {
             </label>
             <input
               type="email"
+              value={studentData.email}
               placeholder="QyM9p@example.com"
+              onChange={(e) => setStudentData({...studentData , email : e.target.value})}
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
           </div>
@@ -95,5 +110,7 @@ export default function Interview() {
         </div>
       </div>
     </div>
+    )}   </>
+    
   );
 }
